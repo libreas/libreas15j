@@ -100,7 +100,7 @@
 \newcommand{\lsURL}{http://langsci-press.org/catalog/book/\lsID}
 \newcommand{\lsSeries}{eotms}
 \newcommand{\lsOutput}{book}
-\newcommand{\lsBookLanguage}{english}
+\newcommand{\lsBookLanguage}{german}
 \newcommand{\lsFontsize}{11pt}
 \newcommand{\lsChapterFooterSize}{\small} %footers in editedvolumes
 \newcommand{\lsCopyright}{CC-BY}
@@ -543,7 +543,11 @@
 \end{titlepage}
 
 % \null\newpage\thispagestyle{empty}
-\hypersetup{colorlinks=false, citecolor=brown, pdfborder={0 0 0}}  % for hyperref
+
+%%%%%%%%% LIBREAS-MOD: linkcolor%%%%%%%%
+%\hypersetup{colorlinks=false, citecolor=brown, pdfborder={0 0 0}}  % for hyperref
+\hypersetup{colorlinks=false, allcolors=black, pdfborder={0 0 0}}
+%%%%%%%%% LIBREAS-MOD: end%%%%%%%%
 \color{black}
 \lsInsideFont
 
@@ -1081,20 +1085,35 @@
   {\lsYear}. %
   \textit{\@title}\if\@subtitle\empty\else: \textit{\@subtitle}\fi\ %
   (\lsSeriesTitle). %
-  Berlin: Language Science Press.
+  %%%%%%%%% LIBREAS-MOD: change publisher name%%%%%%%%
+  %Berlin: Language Science Press.
+  Berlin: LIBREAS e.\,V.
+  %%%%%%%%% LIBREAS-MOD: end %%%%%%%%
 }
 \newcommand{\lsImpressumExtra}{}%for legal notes required for revised theses ("... in fulfillment of ... ")
 
-\newcommand{\publisherstreetaddress}{%
-Language Science Press\\
-Xhain\\
-Grünberger Str. 16\\
-10243 Berlin, Germany}
-\newcommand{\publisherurl}{\href{http://langsci-press.org}{langsci-press.org}}
-\newcommand{\storageinstitution}{FU Berlin}
-\newcommand{\githubtext}{Source code available from \href{https://www.github.com/langsci/\lsID}{www.github.com/langsci/\lsID}}
-\newcommand{\paperhivetext}{Collaborative~reading:~\href{https://paperhive.org/documents/remote?type=langsci&id=\lsID}{paperhive.org/documents/remote?type=langsci\&id=\lsID}}
+%%%%%%%%% LIBREAS-MOD: change publisher info %%%%%%%%
+%\newcommand{\publisherstreetaddress}{%
+%Language Science Press\\
+%Xhain\\
+%Grünberger Str. 16\\
+%10243 Berlin, Germany}
+%\newcommand{\publisherurl}{\href{http://langsci-press.org}{langsci-press.org}}
+%\newcommand{\storageinstitution}{FU Berlin}
+%\newcommand{\githubtext}{Source code available from \href{https://www.github.com/langsci/\lsID}{www.github.com/langsci/\lsID}}
+%\newcommand{\paperhivetext}{Collaborative~reading:~\href{https://paperhive.org/documents/remote?type=langsci&id=\lsID}{paperhive.org/documents/remote?type=langsci\&id=\lsID}}
 
+\newcommand{\publisherstreetaddress}{%
+Libreas e.\,V. Verein zur Förderung der bibliotheks- und informationswissenschaftlichen Kommunikation \\
+c/o\\
+Humboldt-Universität zu Berlin\\
+Institut für Bibliotheks- und Informationswissenschaft\\
+Unter den Linden 6\\
+10099 Berlin}
+\newcommand{\publisherurl}{\href{https://libreas.eu/}{libreas.eu/}}
+%\newcommand{\storageinstitution}{FU Berlin}
+\newcommand{\githubtext}{Source code available from \url{https://github.com/libreas/libreas15j}}
+%%%%%%%%% LIBREAS-MOD: end %%%%%%%%
 
 \newcommand{\lsImpressum}{
 \thispagestyle{empty}
@@ -1205,10 +1224,11 @@ Typesetting software: \XeLaTeX
 
 \vfill
 
-Storage and cataloguing done by \storageinstitution\\[3ex]
+%%%%%%%%% LIBREAS-MOD: comment %%%%%%%%
+%Storage and cataloguing done by \storageinstitution\\[3ex]
 
-\includestoragelogo\\[3ex]
-
+%\includestoragelogo\\[3ex]
+%%%%%%%%% LIBREAS-MOD: end %%%%%%%%
 
 % \vfill
 
