@@ -662,7 +662,7 @@
 \fi
 \ifx\lsSeries\dummyseries
 	\newcommand{\lsSeriesTitle}{~}
-	\newcommand{\lsSeriesColor}{lsNightGreen}
+	\newcommand{\lsSeriesColor}{libreas}
 \fi
 \ifx\lsSeries\guidelines
 	\newcommand{\lsSeriesTitle}{Language Science Press Guidelines}

@@ -436,7 +436,7 @@
                   %text width=95mm,
                   %anchor=north west]
             %{\color{#1}\lsCoverSeriesFont{\lsSeriesTitle\par}};
-}
+%}
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Output types
