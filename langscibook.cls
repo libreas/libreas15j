@@ -86,7 +86,8 @@
 \usepackage{xspace}
 \newcommand{\lsp}{Language Science Press\xspace}
 \newcommand{\lsSeriesNumber}{??}
-\newcommand{\lsSeriesText}{\color{red}{No series description provided}}
+%%%%%%%%% LIBREAS-MOD: Warnung für fehlende Reihen-Info unsichtbar gemacht
+\newcommand{\lsSeriesText}{\color{white}{No series description provided}}
 \newcommand{\lsISSN}{??}
 \newcommand{\lsISSNprint}{??}
 \newcommand{\lsISSNelectronic}{??}
@@ -102,11 +103,11 @@
 \newcommand{\lsOutput}{book}
 \newcommand{\lsBookLanguage}{german}
 \newcommand{\lsFontsize}{11pt}
-\newcommand{\lsChapterFooterSize}{\small} %footers in editedvolumes
+%\newcommand{\lsChapterFooterSize}{\small} %footers in editedvolumes
 \newcommand{\lsCopyright}{CC-BY}
 \newcommand{\lsSpinewidth}{20mm}
 \newcommand{\lsBiblatexBackend}{biber}
-\newcommand{\logotext}{{\color{red}no logo}}
+%\newcommand{\logotext}{{\color{red}no logo}}
 \newcommand{\lsYear}{\the\year}
 
 \newcommand{\lsBackBody}{Set blurb on back with {\textbackslash}BackBody\{my blurb\}}
@@ -127,7 +128,7 @@
 \newcommand{\includespinelogo}{~}
 \newcommand{\includestoragelogo}{~}
 \newcommand{\includepublisherlogo}{~}
-\newcommand{\includechapterfooterlogo}{~}
+%\newcommand{\includechapterfooterlogo}{~}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -421,20 +422,20 @@
 }
 
 % Generates the bottom half of the front cover content: series, series number, logo.
-\newcommand{\podcoverbottomtext}[1][white]{
-  \node [ above right = 18.5mm and -.1mm of CoverColouredRectangleFront.south west,
-          rectangle,
-          fill=white,
-          minimum size=17pt] (lspcls_square) {}; % This is the white square at the bottom left of the front cover
-  \node [ above left = 10mm and 7.5mm of CoverColouredRectangleFront.south east] {\color{#1}\includepublisherlogo}; % Print the Language Science press Logo
-  \path let \p1 = (lspcls_square.north east), % Calculate the exact coordinates for the Series Title to print.
-            \p2 = (lspcls_covertitle.west)
-            in node at (\x2,\y1) (lspcls_seriesinfo) [
-                  font=\fontsize{17pt}{7.5mm}\selectfont,
-                  right,
-                  text width=95mm,
-                  anchor=north west]
-            {\color{#1}\lsCoverSeriesFont{\lsSeriesTitle\par}};
+%\newcommand{\podcoverbottomtext}[1][white]{
+  %\node [ above right = 18.5mm and -.1mm of CoverColouredRectangleFront.south west,
+          %rectangle,
+          %fill=white,
+          %minimum size=17pt] (lspcls_square) {}; % This is the white square at the bottom left of the front cover
+  %\node [ above left = 10mm and 7.5mm of CoverColouredRectangleFront.south east] {\color{#1}\includepublisherlogo}; % Print the Language Science press Logo
+  %\path let \p1 = (lspcls_square.north east), % Calculate the exact coordinates for the Series Title to print.
+            %\p2 = (lspcls_covertitle.west)
+            %in node at (\x2,\y1) (lspcls_seriesinfo) [
+                  %font=\fontsize{17pt}{7.5mm}\selectfont,
+                  %right,
+                  %text width=95mm,
+                  %anchor=north west]
+            %{\color{#1}\lsCoverSeriesFont{\lsSeriesTitle\par}};
 }
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -943,7 +944,7 @@
 	    ] (CoverColouredRectangleFront) {};
   \end{pgfonlayer}
   \podfrontcovertoptext[\lsSeriesColor]{140mm}{51pt}
-  \node [ above left = 10mm and 7.5mm of CoverColouredRectangleFront.south east] {\color{\lsSeriesColor}\includepublisherlogo}; % Print the Language Science press Logo
+  %\node [ above left = 10mm and 7.5mm of CoverColouredRectangleFront.south east] {\color{\lsSeriesColor}\includepublisherlogo}; % Print the Language Science press Logo
 \end{tikzpicture}
 \ifcsname tikz@library@external@loaded\endcsname\tikzexternalenable\fi
 }
@@ -1811,18 +1812,18 @@ width=.8\textwidth
 	\fi
 
 
-\AtBeginDocument{	% for the citation in the footer
-	\onlyAuthor
-	\renewcommand{\newlineCover}{}
-	\renewcommand{\newlineSpine}{}
-	\edef\lsCollectionTitle{\@title\ifx\@subtitle\empty\else{: \@subtitle}\fi}		% \edef immediately expands \@title
-	\edef\lsCollectionEditor{\@author}
-	\addbibresource{collection_tmp.bib}
-	\if@partsw\AfterEndDocument{\typeout{langscibook Warning: You are in includeonly mode.}\typeout{The bibliographical information for the chapters in this volume have not been updated}}\else% Check for \includeonly mode
-	\newwrite\tempfile						% open temporary bib file
-	\immediate\openout\tempfile=collection_tmp.bib
-	\fi
-}
+%\AtBeginDocument{	% for the citation in the footer
+	%\onlyAuthor
+	%\renewcommand{\newlineCover}{}
+	%\renewcommand{\newlineSpine}{}
+	%\edef\lsCollectionTitle{\@title\ifx\@subtitle\empty\else{: \@subtitle}\fi}		% \edef immediately expands \@title
+	%\edef\lsCollectionEditor{\@author}
+	%\addbibresource{collection_tmp.bib}
+	%\if@partsw\AfterEndDocument{\typeout{langscibook Warning: You are in includeonly mode.}\typeout{The bibliographical information for the chapters in this volume have not been updated}}\else% Check for \includeonly mode
+	%\newwrite\tempfile						% open temporary bib file
+	%\immediate\openout\tempfile=collection_tmp.bib
+	%\fi
+%}
 % Only touch the \tempfile if we are NOT in \includeonly mode, prevent flushing of the file
 \AtEndDocument{\if@partsw\else\immediate\closeout\tempfile\fi}% close temporary bib file
 
@@ -1860,15 +1861,15 @@ width=.8\textwidth
 	\begin{collectionpaper}
 	\begin{refsection}
 
-	\DeclareCiteCommand{\fullciteFooter}
-		{\defcounter{maxnames}{\blx@maxbibnames}%
-		  \usebibmacro{prenote}}
-		{\usedriver
-		   {\DeclareNameAlias{sortname}{default}}
-		   {\thefield{entrytype}}}
-		{\multicitedelim}
-		{\usebibmacro{postnote}}
-	\renewcommand{\lsCollectionPaperCitationText}{\fullciteFooter{#1footer}}
+	%\DeclareCiteCommand{\fullciteFooter}
+		%{\defcounter{maxnames}{\blx@maxbibnames}%
+		  %\usebibmacro{prenote}}
+		%{\usedriver
+		   %{\DeclareNameAlias{sortname}{default}}
+		   %{\thefield{entrytype}}}
+		%{\multicitedelim}
+		%{\usebibmacro{postnote}}
+	%\renewcommand{\lsCollectionPaperCitationText}{\fullciteFooter{#1footer}}
 
 	\include{#1}%
         \if@partsw\relax\else% This switch controls whether the included chapter is in the range of \includeonly. It's from source2e.
@@ -1878,19 +1879,19 @@ width=.8\textwidth
 
 	%%% for citation in footer
 	%% preprocessing of author/editor names
-	\onlyAuthor
-	\renewcommand{\newlineCover}{}
-	\renewcommand{\newlineSpine}{}
-	\renewcommand{\newlineTOC}{}
-	\StrSubstitute{\@author}{,}{ and }[\authorTemp]
-	\StrSubstitute{\authorTemp}{\&}{ and }[\authorTemp]
-	\StrSubstitute{\lsCollectionEditor}{,}{ and }[\editorTemp]
-	\StrSubstitute{\editorTemp}{\&}{ and }[\editorTemp]
+	%\onlyAuthor
+	%\renewcommand{\newlineCover}{}
+	%\renewcommand{\newlineSpine}{}
+	%\renewcommand{\newlineTOC}{}
+	%\StrSubstitute{\@author}{,}{ and }[\authorTemp]
+	%\StrSubstitute{\authorTemp}{\&}{ and }[\authorTemp]
+	%\StrSubstitute{\lsCollectionEditor}{,}{ and }[\editorTemp]
+	%\StrSubstitute{\editorTemp}{\&}{ and }[\editorTemp]
 
 	%% write bib entry to file
 	%% FIXME: the publisher field needs a final period, since this is not provided by \fullciteFooter together with DOIs.
-	\immediate\write\tempfile{@incollection{#1,author={\authorTemp},title={{\lsCollectionPaperFooterTitle}},booktitle={{\lsCollectionTitle}},editor={\editorTemp},publisher={Language Science Press.},Address={Berlin},year={\lsYear},pages={\lsCollectionPaperFirstPage --\lsCollectionPaperLastPage},doi={\lsChapterDOI},keywords={withinvolume}}}
-	\immediate\write\tempfile{@incollection{#1footer,author={\authorTemp},title={{\lsCollectionPaperFooterTitle}},booktitle={{\lsCollectionTitle}},editor={\editorTemp},publisher={Language Science Press.},Address={Berlin},year={\lsYear},pages={\lsCollectionPaperFirstPage --\lsCollectionPaperLastPage},doi={\lsChapterDOI},options={dataonly=true}}}
+	%\immediate\write\tempfile{@incollection{#1,author={\authorTemp},title={{\lsCollectionPaperFooterTitle}},booktitle={{\lsCollectionTitle}},editor={\editorTemp},publisher={Language Science Press.},Address={Berlin},year={\lsYear},pages={\lsCollectionPaperFirstPage --\lsCollectionPaperLastPage},doi={\lsChapterDOI},keywords={withinvolume}}}
+	%\immediate\write\tempfile{@incollection{#1footer,author={\authorTemp},title={{\lsCollectionPaperFooterTitle}},booktitle={{\lsCollectionTitle}},editor={\editorTemp},publisher={Language Science Press.},Address={Berlin},year={\lsYear},pages={\lsCollectionPaperFirstPage --\lsCollectionPaperLastPage},doi={\lsChapterDOI},options={dataonly=true}}}
         \fi% If the paper is not within \includeonly, don't do anything.
 	\end{refsection}
 	\end{collectionpaper}}
@@ -1933,7 +1934,7 @@ width=.8\textwidth
   \bigskip
   \@title}}
 
-\newcommand{\lsCollectionPaperFooterTitle}{\@title}
+%\newcommand{\lsCollectionPaperFooterTitle}{\@title}
 
 \newcommand{\lsCollectionPaperFrontmatterMode}{% %%% Sometimes, chapters like prefaces appear in edited volumes that need special treatment in their headers and TOC
   \renewcommand{\lsCollectionPaperTitle}{{%
@@ -1970,11 +1971,11 @@ width=.8\textwidth
   \renewcommand{\newlineCover}{\\[0.5ex]}
   \AuthorAffiliation\Large\@author}}
 
-\newcommand{\lsCollectionPaperCitation}{\scalebox{1.2}{%
-  \includechapterfooterlogo}%
+%\newcommand{\lsCollectionPaperCitation}{\scalebox{1.2}{%
+  %\includechapterfooterlogo}%
   % \hspace{0.8em}%
-  \hfill%
-  \parbox[b]{.87\textwidth}{\linespread{0.8}\lsChapterFooterSize\normalfont\lsCollectionPaperCitationText \includegraphics[height=.75em]{ccby.pdf}}}
+  %\hfill%
+  %\parbox[b]{.87\textwidth}{\linespread{0.8}\lsChapterFooterSize\normalfont\lsCollectionPaperCitationText \includegraphics[height=.75em]{ccby.pdf}}}
 \ifx\lsOutput\lsOutputPaper       % only if output==paper
 	\renewcommand{\lsCollectionPaperCitation}{Change with \string\papernote}
 \fi
@@ -1988,7 +1989,7 @@ width=.8\textwidth
   \renewcommand{\maketitle}{
     \refstepcounter{chapter}
     \addchap*{\lsCollectionPaperTitle}
-    \global\edef\lsCollectionPaperFirstPage{\thepage} % for citation in footer
+    %\global\edef\lsCollectionPaperFirstPage{\thepage} % for citation in footer
     \onlyAuthor
     \renewcommand{\newlineCover}{}
     \renewcommand{\newlineTOC}{\\}
@@ -2022,8 +2023,8 @@ width=.8\textwidth
 \providecommand{\markuptitle}[2]{
   \title{\texorpdfstring{#1}{#2}}
   \shorttitlerunninghead{#2}
-  \renewcommand{\lsChapterFooterSize}{\scriptsize}
-  \renewcommand{\lsCollectionPaperFooterTitle}{Add\noexpand\texttt{\textbackslash renewcommand\{\textbackslash lsCollectionPaperFooterTitle\}\{A new theory of \textbackslash noexpand\textbackslash textit\{This\} and \textbackslash noexpand\textbackslash textit\{that\}\}} to preamble}
+  %\renewcommand{\lsChapterFooterSize}{\scriptsize}
+  %\renewcommand{\lsCollectionPaperFooterTitle}{Add\noexpand\texttt{\textbackslash renewcommand\{\textbackslash lsCollectionPaperFooterTitle\}\{A new theory of \textbackslash noexpand\textbackslash textit\{This\} and \textbackslash noexpand\textbackslash textit\{that\}\}} to preamble}
 }
 
 
