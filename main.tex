@@ -8,7 +8,7 @@
 % Some lines start with %. Remove the % to include them
 
 \documentclass[output=book,collection,collectionchapter
-            ,colorlinks, citecolor=brown
+            ,colorlinks, citecolor=brown, booklanguage=german,
             % ,draft,draftmode
 		  ]{langscibook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,7 +22,7 @@
 \input{localhyphenation.tex}
 \input{localcommands.tex}
 \addbibresource{localbibliography.bib}
-
+          
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Frontmatter                      %%%
@@ -53,31 +53,51 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
-\includepaper{chapters/L12hedtke}
+\includepaper{chapters/prefaceL12hedtke}
+\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+\setcounter{chapter}{0}
+\includepaper{chapters/L12hedtke} 
+%%%
+
+\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+\includepaper{chapters/prefaceL13helbing}
+\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+\setcounter{chapter}{1}
+\includepaper{chapters/L13helbing} 
 %%%
 
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL18kaden}
 \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{0}
+\setcounter{chapter}{2}
 \includepaper{chapters/L18kaden} 
 %%%
+
+\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+\includepaper{chapters/prefaceL19spenke}
+\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+\setcounter{chapter}{3}
+\includepaper{chapters/L18spenke} 
+%%%
+
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL20redaktion}
 \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{1}
+\setcounter{chapter}{4}
 \includepaper{chapters/L20redaktion} 
 %%%
+
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL22hartmann}
 \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{2}
+\setcounter{chapter}{5}
 \includepaper{chapters/L22hartmann} 
 %%%
+
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL29hug}
 \lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{3}
+\setcounter{chapter}{6}
 \includepaper{chapters/L29hug}
 %%%
 % copy the lines above and adapt as necessary

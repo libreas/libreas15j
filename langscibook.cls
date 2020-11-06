@@ -163,7 +163,7 @@
 \DeclareStringOption{output}[book]
 	\define@key{langscibook}{output}{%
 		\renewcommand{\lsOutput}{#1}}
-\DeclareStringOption{booklanguage}[english]
+\DeclareStringOption{booklanguage}[german]
 	\define@key{langscibook}{booklanguage}{%
 		\renewcommand{\lsBookLanguage}{#1}}
 \DeclareStringOption{copyright}[CC-BY]
