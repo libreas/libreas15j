@@ -37,8 +37,8 @@
 {\sloppy\tableofcontents}
 
 %% sections without authors
-\include{chapters/preface}
-\include{chapters/acknowledgments}
+%\include{chapters/preface}
+%\include{chapters/acknowledgments}
 
 % %% Additional prefaces and/or introductions that also have authors
 %\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
@@ -46,11 +46,18 @@
 %\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
 %\setcounter{chapter}{0} % Reset the chapter counter so that preceding prefaces are not counted
 
+\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+\includepaper{chapters/vorwort}
+\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+\setcounter{chapter}{0}
+%%%
+
 \mainmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%             Chapters                         %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL12hedtke}
