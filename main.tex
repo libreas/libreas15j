@@ -46,10 +46,10 @@
 %\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
 %\setcounter{chapter}{0} % Reset the chapter counter so that preceding prefaces are not counted
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
-\includepaper{chapters/vorwort}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{0}
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\includepaper{chapters/vorwort}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{0}
 %%%
 
 \mainmatter
@@ -60,51 +60,54 @@
 
 
 \lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+\pagenumbering{roman}
+\includepaper{chapters/vorwort}
+\pagenumbering{arabic}
 \includepaper{chapters/prefaceL12hedtke}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{0}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{0}
 \includepaper{chapters/L12hedtke} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL13helbing}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{1}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{1}
 \includepaper{chapters/L13helbing} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL18kaden}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{2}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{2}
 \includepaper{chapters/L18kaden} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL19spenke}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{3}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{3}
 \includepaper{chapters/L19spenke} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL20redaktion}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{4}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{4}
 \includepaper{chapters/L20redaktion} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL22hartmann}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{5}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{5}
 \includepaper{chapters/L22hartmann} 
 %%%
 
-\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
+%\lsCollectionPaperFrontmatterMode % Enter the Frontmatter Mode.
 \includepaper{chapters/prefaceL29hug}
-\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
-\setcounter{chapter}{6}
+%\lsCollectionPaperMainmatterMode % Leave the Frontmatter Mode
+%\setcounter{chapter}{6}
 \includepaper{chapters/L29hug}
 %%%
 % copy the lines above and adapt as necessary
@@ -113,5 +116,5 @@
 %%%             Backmatter                       %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % There is normally no need to change the backmatter section
-\input{backmatter.tex}
+%\input{backmatter.tex}
 \end{document}

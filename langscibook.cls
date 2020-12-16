@@ -888,10 +888,10 @@
   \AtBeginDocument{
     \renewcommand{\newlineCover}{}
     \renewcommand{\newlineSpine}{}
-    \renewcommand{\lsEditorPrefix}{{\Large Edited by\\}}
-    \renewcommand{\lsEditorSuffix}{(ed.)}
+    \renewcommand{\lsEditorPrefix}{{\Large ~\\}}
+    \renewcommand{\lsEditorSuffix}{(Hrsg.)}
       \iflsMultiauthors
-	\renewcommand{\lsEditorSuffix}{(eds.)}
+	\renewcommand{\lsEditorSuffix}{(Hrsg.)}
       \fi
   }
 \else
@@ -1083,15 +1083,15 @@
   \renewcommand{\newlineCover}{}
   \renewcommand{\newlineSpine}{}
   {\lsImpressionCitationAuthor}\if\lsEditorSuffix\empty\else\ \lsEditorSuffix\fi. %
-  {\lsYear}. %
-  \textit{\@title}\if\@subtitle\empty\else: \textit{\@subtitle}\fi\ %
-  (\lsSeriesTitle). %
+  %{\lsYear}. %
+  \textit{\@title}\if\@subtitle\empty\else: \textit{\@subtitle}\fi. %
+ % (\lsSeriesTitle). %
   %%%%%%%%% LIBREAS-MOD: change publisher name%%%%%%%%
   %Berlin: Language Science Press.
-  Berlin: LIBREAS e.\,V.
+  Berlin: LIBREAS e.\,V., {\lsYear}.
   %%%%%%%%% LIBREAS-MOD: end %%%%%%%%
 }
-\newcommand{\lsImpressumExtra}{}%for legal notes required for revised theses ("... in fulfillment of ... ")
+%\newcommand{\lsImpressumExtra}{}%for legal notes required for revised theses ("... in fulfillment of ... ")
 
 %%%%%%%%% LIBREAS-MOD: change publisher info %%%%%%%%
 %\newcommand{\publisherstreetaddress}{%
@@ -1111,7 +1111,7 @@ Humboldt-Universität zu Berlin\\
 Institut für Bibliotheks- und Informationswissenschaft\\
 Unter den Linden 6\\
 10099 Berlin}
-\newcommand{\publisherurl}{\href{https://libreas.eu/}{libreas.eu/}}
+\newcommand{\publisherurl}{\href{https://libreas.eu/}{https://libreas.eu/}}
 %\newcommand{\storageinstitution}{FU Berlin}
 \newcommand{\githubtext}{Source code available from \url{https://github.com/libreas/libreas15j}}
 %%%%%%%%% LIBREAS-MOD: end %%%%%%%%
@@ -1124,101 +1124,78 @@ Unter den Linden 6\\
 
 \vfill
 
-This title can be downloaded at:\\
-\url{\lsURL}
+%This title can be downloaded at:\\
+%\url{\lsURL}
 
-© \lsYear, \iflsCollection the authors\else\@author\fi
+%© \lsYear, \iflsCollection the authors\else\@author\fi
 
-\newcommand{\ccby}{CC-BY}
-\newcommand{\ccbynd}{CC-BY-ND}
-\ifx\lsCopyright\ccby
-Published under the Creative Commons Attribution 4.0 Licence (CC BY 4.0):
-http://creativecommons.org/licenses/by/4.0/ \includegraphics[height=.75em]{ccby.pdf}
-\else
-\ifx\lsCopyright\ccbynd
-Published under the Creative Commons Attribution-NoDerivatives 4.0 Licence (CC BY-ND 4.0):
-http://creativecommons.org/licenses/by-nd/4.0/ \includegraphics[height=.75em]{ccbynd.pdf}
-\else
-Published under the Creative Commons Attribution-ShareAlike 4.0 Licence (CC BY-SA 4.0):
-http://creativecommons.org/licenses/by-sa/4.0/ \includegraphics[height=.75em]{ccbysa.pdf}
-\fi
-\fi
+%\newcommand{\ccby}{CC-BY}
+%\newcommand{\ccbynd}{CC-BY-ND}
+%\ifx\lsCopyright\ccby
+%Published under the Creative Commons Attribution 4.0 Licence (CC BY 4.0):
+%http://creativecommons.org/licenses/by/4.0/ \includegraphics[height=.75em]{ccby.pdf}
+%\else
+%\ifx\lsCopyright\ccbynd
+%Published under the Creative Commons Attribution-NoDerivatives 4.0 Licence (CC BY-ND 4.0):
+%http://creativecommons.org/licenses/by-nd/4.0/ \includegraphics[height=.75em]{ccbynd.pdf}
+%\else
+%Published under the Creative Commons Attribution-ShareAlike 4.0 Licence (CC BY-SA 4.0):
+%http://creativecommons.org/licenses/by-sa/4.0/ \includegraphics[height=.75em]{ccbysa.pdf}
+%\fi
+%\fi
 
-{\lsImpressumExtra}
+%{\lsImpressumExtra}
 
-\ifx\lsSeries\sidl
-Indexed in EBSCO\smallskip
-\fi
-
-
-
-\begin{tabular}{@{}l@{~}l}
-ISBN: &
-\IfStrEq{\lsISBNdigital}{000-0-000000-00-0}{%no digital ISBN, issue warning
-  \color{red}no digital ISBN
-}{%digital ISBN present, write ISBN
-  \lsISBNdigital~(Digital)
-}
-\\
-\IfStrEq{\lsISBNhardcover}{000-0-000000-00-0}{ %hardcover ISBN not present
-}{%hardcover ISBN present, write ISBN
-  &\lsISBNhardcover~(Hardcover)\\
-}
-
-\IfStrEq{\lsISBNsoftcover}{000-0-000000-00-0}{ %softcover ISBN not present
-  \IfStrEq{\lsISBNhardcover}{000-0-000000-00-0}{ %neither hardcover nor softcover, issue warning
-    \color{red} no print ISBNs!
-  }{%hardcover present, no warning
-  }
-}{%only softcover present, write ISBN
-  &\lsISBNsoftcover~(Softcover)\\
-}
-\end{tabular}
-
-\IfStrEq{\lsISSNprint}{??}   % \IfStrEq from xstring
-  {}
-  {ISSN (print): \lsISSNprint\\
-   ISSN (electronic): \lsISSNelectronic\\}
-\IfStrEq{\lsISSN}{??}
-  {}
-  {ISSN: \lsISSN}
+%\ifx\lsSeries\sidl
+%Indexed in EBSCO\smallskip
+%\fi
 
 
-\IfStrEq{\lsBookDOI}{??}
-  {{\color{red} no DOI}}
-  {DOI: \href{https://doi.org/\lsBookDOI}{\nolinkurl{\lsBookDOI}}}\\
-\IfStrEq{\lsID}{000}{\color{red} ID not assigned!}{%
-\githubtext\\
-\paperhivetext
-}%
-\bigskip
 
-Cover and concept of design:
-Ulrike Harbort \\
-\if\@translator\empty\else
-Translator:
-\@translator \\
-\fi
-\if\@typesetter\empty\else
-Typesetting:
-\@typesetter \\
-\fi
-\if\@illustrator\empty\else
-Illustration:
-\@illustrator \\
-\fi
-\if\@proofreader\empty\else
-Proofreading:
-\@proofreader \\
-\fi
-\if\@openreviewer\empty\else
-Open reviewing:
-\@openreviewer \\
-\fi
-Fonts: Libertinus, Arimo, DejaVu Sans Mono\lsAdditionalFontsImprint\\
-Typesetting software: \XeLaTeX
+%\begin{tabular}{@{}l@{~}l}
+%ISBN: &
+%\IfStrEq{\lsISBNdigital}{000-0-000000-00-0}{%no digital ISBN, issue warning
+%  \color{red}no digital ISBN
+%}{%digital ISBN present, write ISBN
+%  \lsISBNdigital~(Digital)
+%}
+%\\
+%\IfStrEq{\lsISBNhardcover}{000-0-000000-00-0}{ %hardcover ISBN not present
+%}{%hardcover ISBN present, write ISBN
+%  &\lsISBNhardcover~(Hardcover)\\
+%}
 
-\bigskip
+%\IfStrEq{\lsISBNsoftcover}{000-0-000000-00-0}{ %softcover ISBN not present
+%  \IfStrEq{\lsISBNhardcover}{000-0-000000-00-0}{ %neither hardcover nor softcover, issue warning
+%    \color{red} no print ISBNs!
+%  }{%hardcover present, no warning
+%  }
+%}{%only softcover present, write ISBN
+%  &\lsISBNsoftcover~(Softcover)\\
+%}
+%\end{tabular}
+
+%\IfStrEq{\lsISSNprint}{??}   % \IfStrEq from xstring
+%  {}
+%  {ISSN (print): \lsISSNprint\\
+%   ISSN (electronic): \lsISSNelectronic\\}
+%\IfStrEq{\lsISSN}{??}
+%  {}
+%  {ISSN: \lsISSN}
+
+
+%\IfStrEq{\lsBookDOI}{??}
+%  {{\color{red} no DOI}}
+%  {DOI: \href{https://doi.org/\lsBookDOI}{\nolinkurl{\lsBookDOI}}}\\
+%\IfStrEq{\lsID}{000}{\color{red} ID not assigned!}{%
+%\githubtext\\
+%\paperhivetext
+%}%
+%\bigskip
+
+Satz auf Basis der \XeLaTeX\ Vorlage von Language Science Press: \href{https://www.overleaf.com/latex/templates/langsci-template-for-edited-volumes-2020-slash-05/qzrchkdzvrxj}{Overleaf template for edited volumes} (\url{https://langsci-press.org/templatesAndTools})
+
+\vfill
 
 \publisherstreetaddress\\
 \publisherurl
